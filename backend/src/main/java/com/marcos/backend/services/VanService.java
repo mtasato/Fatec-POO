@@ -44,7 +44,7 @@ public class VanService {
     @Transactional
     public Van update(Long id, Van van) {
         if (!vanRepository.existsById(id)) {
-            throw new RuntimeException("Van not found with id: " + id);
+            throw new RuntimeException("Van não encontrada com id: " + id);
         }
         van.setId(id);
 
@@ -54,7 +54,7 @@ public class VanService {
     @Transactional
     public void deleteById(Long id) {
         if (!vanRepository.existsById(id)) {
-            throw new RuntimeException("Van not found with id: " + id);
+            throw new RuntimeException("Van não encontrada com id: " + id);
         }
         vanRepository.deleteById(id);
     }

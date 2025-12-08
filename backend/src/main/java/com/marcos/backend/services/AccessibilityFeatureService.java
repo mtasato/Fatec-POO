@@ -34,7 +34,7 @@ public class AccessibilityFeatureService {
     @Transactional
     public AccessibilityFeature update(Long id, AccessibilityFeature feature) {
         if (!accessibilityFeatureRepository.existsById(id)) {
-            throw new RuntimeException("Accessibility feature not found with id: " + id);
+            throw new RuntimeException("Funcionalidade de Acessibilidade não encontrada com id: " + id);
         }
         feature.setId(id);
         return accessibilityFeatureRepository.save(feature);
@@ -43,7 +43,7 @@ public class AccessibilityFeatureService {
     @Transactional
     public void deleteById(Long id) {
         if (!accessibilityFeatureRepository.existsById(id)) {
-            throw new RuntimeException("Accessibility feature not found with id: " + id);
+            throw new RuntimeException("Funcionalidade de Acessibilidade não encontrada com id:: " + id);
         }
         accessibilityFeatureRepository.deleteById(id);
     }
