@@ -152,7 +152,7 @@ GET {{baseUrl}}/buses
 
 
 ### Listar ônibus - página 0, 10 itens
-GET {{baseUrl}}/buses?page=0&size=10
+GET {{baseUrl}}/buses?page=0&size=10&search=Mercedes
 
 
 ### Listar ônibus - página 0, 5 itens, ordenado por modelo
