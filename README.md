@@ -101,7 +101,6 @@ O aplicativo estará disponível em `http://localhost:5173`
 - [x] Listagem e filtros
 - [x] Edição e exclusão
 - [x] Validação de dados
-- [x] Interface responsiva
 
 ## 🎯 Conceitos de POO Aplicados
 
