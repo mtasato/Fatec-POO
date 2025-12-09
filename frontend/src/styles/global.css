@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: "Poppins-bold";
+    src: url(../fonts/poppins/Poppins-Bold.ttf) format("opentype");
+    font: bold;
+}
+
+@font-face {
+    font-family: "Poppins-regular";
+    src: url(../fonts/poppins/Poppins-Regular.ttf)format("opentype");
+    font: bold;
+}
+
+@theme {
+    /* default-colors */
+    --color-primary-color: #FFCA01;
+    --color-secondary-color: #000000;
+    --color-title: #101828;
+
+    /*Neutral*/
+    --color-neutral-10: #f9fafb;
+    --color-neutral-20: #d1d5dc;
+    --color-neutral-60: #4a5565;
+    --color-neutral-70: #364153;
+
+    --color-background: #f7fafc;
+    --color-alert: #e53e3e;
+    --color-confirm: #48bb78;
+
+    --color-blue-10: #155dfc;
+
+    /* fonts */
+    --font-default: 'Poppins-regular';
+    --font-title: 'Poppins-bold';
+}
