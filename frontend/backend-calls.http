@@ -1,9 +1,15 @@
 ### VARIÁVEIS
 @baseUrl = http://localhost:8080
 
+
 ### ============================================
+
+
 ### ACCESSIBILITY FEATURES
+
+
 ### ============================================
+
 
 ### Criar feature de acessibilidade - Rampa
 POST {{baseUrl}}/accessibility-features
@@ -14,6 +20,7 @@ Content-Type: application/json
   "description": "Rampa hidráulica para acesso de cadeirantes"
 }
 
+
 ### Criar feature de acessibilidade - Assentos Preferenciais
 POST {{baseUrl}}/accessibility-features
 Content-Type: application/json
@@ -22,6 +29,7 @@ Content-Type: application/json
   "name": "Assentos Preferenciais",
   "description": "Assentos reservados para idosos e pessoas com deficiência"
 }
+
 
 ### Criar feature de acessibilidade - Avisos Sonoros
 POST {{baseUrl}}/accessibility-features
@@ -32,6 +40,7 @@ Content-Type: application/json
   "description": "Anúncios automáticos de voz para paradas"
 }
 
+
 ### Criar feature de acessibilidade - Sinalização Braille
 POST {{baseUrl}}/accessibility-features
 Content-Type: application/json
@@ -41,11 +50,14 @@ Content-Type: application/json
   "description": "Placas em braille para passageiros com deficiência visual"
 }
 
+
 ### Listar todas as features de acessibilidade
 GET {{baseUrl}}/accessibility-features
 
+
 ### Buscar feature de acessibilidade por ID
 GET {{baseUrl}}/accessibility-features/1
+
 
 ### Atualizar feature de acessibilidade
 PUT {{baseUrl}}/accessibility-features/1
@@ -56,12 +68,19 @@ Content-Type: application/json
   "description": "Rampa hidráulica elétrica com controle remoto para acesso de cadeirantes"
 }
 
+
 ### Deletar feature de acessibilidade
 DELETE {{baseUrl}}/accessibility-features/1
 
+
 ### ============================================
+
+
 ### BUSES
+
+
 ### ============================================
+
 
 ### Criar ônibus
 POST {{baseUrl}}/buses
@@ -79,6 +98,7 @@ Content-Type: application/json
   "accessibilityFeatures": []
 }
 
+
 ### Criar ônibus com features de acessibilidade
 POST {{baseUrl}}/buses
 Content-Type: application/json
@@ -93,10 +113,15 @@ Content-Type: application/json
   "hasWifi": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 2}
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
   ]
 }
+
 
 ### Criar ônibus urbano
 POST {{baseUrl}}/buses
@@ -112,28 +137,39 @@ Content-Type: application/json
   "hasWifi": false,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 3}
+    {
+      "id": 1
+    },
+    {
+      "id": 3
+    }
   ]
 }
+
 
 ### Listar todos os ônibus (paginação padrão)
 GET {{baseUrl}}/buses
 
+
 ### Listar ônibus - página 0, 10 itens
 GET {{baseUrl}}/buses?page=0&size=10
+
 
 ### Listar ônibus - página 0, 5 itens, ordenado por modelo
 GET {{baseUrl}}/buses?page=0&size=5&sort=model,asc
 
+
 ### Listar ônibus - ordenado por ano decrescente
 GET {{baseUrl}}/buses?sort=year,desc
+
 
 ### Listar ônibus - múltiplos critérios de ordenação
 GET {{baseUrl}}/buses?sort=year,desc&sort=brand,asc
 
+
 ### Buscar ônibus por ID
 GET {{baseUrl}}/buses/1
+
 
 ### Atualizar ônibus
 PUT {{baseUrl}}/buses/1
@@ -149,18 +185,31 @@ Content-Type: application/json
   "hasWifi": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 2},
-    {"id": 3}
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
   ]
 }
+
 
 ### Deletar ônibus
 DELETE {{baseUrl}}/buses/1
 
+
 ### ============================================
+
+
 ### VANS
+
+
 ### ============================================
+
 
 ### Criar van
 POST {{baseUrl}}/vans
@@ -179,6 +228,7 @@ Content-Type: application/json
   "accessibilityFeatures": []
 }
 
+
 ### Criar van com features de acessibilidade
 POST {{baseUrl}}/vans
 Content-Type: application/json
@@ -194,10 +244,15 @@ Content-Type: application/json
   "hasStorageSpace": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 4}
+    {
+      "id": 1
+    },
+    {
+      "id": 4
+    }
   ]
 }
+
 
 ### Criar van executiva
 POST {{baseUrl}}/vans
@@ -216,20 +271,26 @@ Content-Type: application/json
   "accessibilityFeatures": []
 }
 
+
 ### Listar todas as vans (paginação padrão)
 GET {{baseUrl}}/vans
+
 
 ### Listar vans - página 0, 10 itens
 GET {{baseUrl}}/vans?page=0&size=10
 
+
 ### Listar vans - página 0, 5 itens, ordenado por marca
 GET {{baseUrl}}/vans?page=0&size=5&sort=brand,asc
+
 
 ### Listar vans - ordenado por número de assentos decrescente
 GET {{baseUrl}}/vans?sort=numberOfSeats,desc
 
+
 ### Buscar van por ID
 GET {{baseUrl}}/vans/1
+
 
 ### Atualizar van
 PUT {{baseUrl}}/vans/1
@@ -246,20 +307,30 @@ Content-Type: application/json
   "hasStorageSpace": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 2}
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
   ]
 }
+
 
 ### Deletar van
 DELETE {{baseUrl}}/vans/1
 
+
 ### ============================================
+
+
 ### CENÁRIOS DE TESTE COMPLETOS
+
+
 ### ============================================
+
 
 ### CENÁRIO 1: Criar sistema completo de transporte acessível
-
 # Passo 1: Criar features de acessibilidade
 POST {{baseUrl}}/accessibility-features
 Content-Type: application/json
@@ -269,6 +340,7 @@ Content-Type: application/json
   "description": "Rampa hidráulica para acesso de cadeirantes"
 }
 
+
 ###
 POST {{baseUrl}}/accessibility-features
 Content-Type: application/json
@@ -277,6 +349,7 @@ Content-Type: application/json
   "name": "Assentos Preferenciais",
   "description": "Assentos reservados para idosos e pessoas com deficiência"
 }
+
 
 ###
 POST {{baseUrl}}/accessibility-features
@@ -288,6 +361,8 @@ Content-Type: application/json
 }
 
 # Passo 2: Criar ônibus com todas as features
+
+
 ###
 POST {{baseUrl}}/buses
 Content-Type: application/json
@@ -309,6 +384,8 @@ Content-Type: application/json
 }
 
 # Passo 3: Criar van acessível
+
+
 ###
 POST {{baseUrl}}/vans
 Content-Type: application/json
@@ -330,21 +407,30 @@ Content-Type: application/json
 }
 
 # Passo 4: Listar todos os veículos
+
+
 ###
 GET {{baseUrl}}/buses
+
 
 ###
 GET {{baseUrl}}/vans
 
+
 ###
 GET {{baseUrl}}/accessibility-features
 
+
 ### ============================================
+
+
 ### CENÁRIO 2: Atualização em massa
+
+
 ### ============================================
+
 
 ### Atualizar múltiplos ônibus adicionando feature de acessibilidade
-
 PUT {{baseUrl}}/buses/1
 Content-Type: application/json
 
@@ -358,11 +444,18 @@ Content-Type: application/json
   "hasWifi": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 2},
-    {"id": 3}
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
   ]
 }
+
 
 ###
 PUT {{baseUrl}}/buses/2
@@ -378,36 +471,57 @@ Content-Type: application/json
   "hasWifi": true,
   "hasAirConditioning": true,
   "accessibilityFeatures": [
-    {"id": 1},
-    {"id": 3}
+    {
+      "id": 1
+    },
+    {
+      "id": 3
+    }
   ]
 }
 
+
 ### ============================================
+
+
 ### TESTES DE PAGINAÇÃO AVANÇADOS
+
+
 ### ============================================
+
 
 ### Página 1 com 3 itens por página
 GET {{baseUrl}}/buses?page=0&size=3
 
+
 ### Página 2 com 3 itens por página
 GET {{baseUrl}}/buses?page=1&size=3
+
 
 ### Página 3 com 3 itens por página
 GET {{baseUrl}}/buses?page=2&size=3
 
+
 ### Ordenação múltipla: ano DESC, depois marca ASC
 GET {{baseUrl}}/buses?sort=year,desc&sort=brand,asc
+
 
 ### Vans ordenadas por número de assentos
 GET {{baseUrl}}/vans?sort=numberOfSeats,desc&page=0&size=5
 
+
 ### ============================================
+
+
 ### TESTES DE VALIDAÇÃO (Devem falhar)
+
+
 ### ============================================
+
 
 ### Buscar ônibus inexistente (deve retornar 404)
 GET {{baseUrl}}/buses/999
+
 
 ### Atualizar ônibus inexistente (deve retornar 404)
 PUT {{baseUrl}}/buses/999
@@ -425,11 +539,14 @@ Content-Type: application/json
   "accessibilityFeatures": []
 }
 
+
 ### Deletar ônibus inexistente (deve retornar 404)
 DELETE {{baseUrl}}/buses/999
 
+
 ### Buscar van inexistente (deve retornar 404)
 GET {{baseUrl}}/vans/999
+
 
 ### Buscar feature inexistente (deve retornar 404)
 GET {{baseUrl}}/accessibility-features/999
