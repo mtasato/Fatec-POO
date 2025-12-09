@@ -38,10 +38,12 @@ export default function ListBus() {
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [selectedBusId, setSelectedBusId] = useState<number | null>(null);
     const [busToEdit, setBusToEdit] = useState<Bus | null>(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
     async function loadBuses() {
         const response = await apiRequest(
-            `/buses?page=${currentPage}&size=${ITEMS_PER_PAGE}&sort=${sortField},${sortOrder}`
+            `/buses?page=${currentPage}&size=${ITEMS_PER_PAGE}&sort=${sortField},${sortOrder}&search=${debouncedSearchTerm}`
         );
         const data = await response.json();
         setBuses(data.content ?? []);
@@ -51,7 +53,16 @@ export default function ListBus() {
 
     useEffect(() => {
         loadBuses();
-    }, [currentPage, sortField, sortOrder]);
+    }, [currentPage, sortField, sortOrder, debouncedSearchTerm]);
+
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedSearchTerm(searchTerm);
+            setCurrentPage(0);
+        }, 500);
+
+        return () => clearTimeout(handler);
+    }, [searchTerm]);
 
     const handleDeleteClick = (id: number) => {
         setSelectedBusId(id);
@@ -157,6 +168,14 @@ export default function ListBus() {
                         <option value="asc">Crescente</option>
                         <option value="desc">Decrescente</option>
                     </select>
+
+                    <input
+                        type="text"
+                        placeholder="Buscar por modelo ou marca"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="px-4 py-2 border rounded-lg w-full md:w-64 shadow-sm"
+                    />
                 </div>
 
                 <div className="bg-white rounded-lg shadow-md p-6 mb-6">
